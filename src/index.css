@@ -105,15 +105,20 @@
   .inter-lg-semibold {
     @apply text-lg font-sans font-semibold;
   }
+  .inter-lg-medium {
+    @apply text-lg font-sans font-medium;
+  }
   .inter-lg-bold {
     @apply text-lg font-sans font-bold;
   }
+
   .inter-base-regular {
     @apply text-base font-sans font-normal;
   }
   .inter-base-semibold {
     @apply text-base font-sans font-semibold;
   }
+
   .inter-base-bold {
     @apply text-base font-sans font-bold;
   }

@@ -1,4 +1,5 @@
-import { Suspense, lazy } from "react";
+import { Page } from "@components/molecules/page";
+import { lazy } from "react";
 import {
   Route,
   RouterProvider,
@@ -7,12 +8,6 @@ import {
 } from "react-router-dom";
 
 const IndexPage = lazy(() => import("./pages/IndexPage"));
-
-const Loading = () => (
-  <div className="bg-grey-5 text-grey-90 flex h-screen w-full items-center justify-center">
-    Loading
-  </div>
-);
 
 const router = createBrowserRouter(
   createRoutesFromElements(
@@ -24,9 +19,9 @@ const router = createBrowserRouter(
 
 function App() {
   return (
-    <Suspense fallback={<Loading />}>
+    <Page>
       <RouterProvider router={router} />
-    </Suspense>
+    </Page>
   );
 }
 

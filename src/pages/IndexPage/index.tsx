@@ -1,9 +1,10 @@
+import { Page } from "@components/molecules/page";
 import { Layout } from "@components/templates/layout";
-import { FC, PropsWithChildren, Suspense, lazy } from "react";
+import { lazy } from "react";
 import { Route, Routes } from "react-router-dom";
 
 const MainPage = lazy(() => import("../MainPage"));
-
+const ProfilePage = lazy(() => import("../ProfilePage"));
 const IndexPage = () => {
   return (
     <Layout>
@@ -16,11 +17,17 @@ const IndexPage = () => {
             </Page>
           }
         />
+        <Route
+          path="profile/*"
+          element={
+            <Page>
+              <ProfilePage />
+            </Page>
+          }
+        />
       </Routes>
     </Layout>
   );
 };
-const Page: FC<PropsWithChildren> = ({ children }) => {
-  return <Suspense fallback={"red"}>{children}</Suspense>;
-};
+
 export default IndexPage;

@@ -23,13 +23,19 @@ export interface HeadingProps
 
 export const Heading: FC<HeadingProps> = ({ level, className, ...props }) => {
   if (level == "h2") {
-    <h2 className={cn(headingVariants({ level, className }))} {...props} />;
+    return (
+      <h2 className={cn(headingVariants({ level, className }))} {...props} />
+    );
   }
   if (level == "h3") {
-    <h3 className={cn(headingVariants({ level, className }))} {...props} />;
+    return (
+      <h3 className={cn(headingVariants({ level, className }))} {...props} />
+    );
   }
   if (level == "h4") {
-    <h3 className={cn(headingVariants({ level, className }))} {...props} />;
+    return (
+      <h3 className={cn(headingVariants({ level, className }))} {...props} />
+    );
   }
   return <></>;
 };
